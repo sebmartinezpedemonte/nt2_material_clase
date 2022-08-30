@@ -16,3 +16,7 @@ en caso de no estar en condiciones, imprimir un informe con las que no se cumpla
 
 3) dado un array de series de tv, ordenar el mismo por año de estreno ascendente. 
 Los objetos deben tener nombre y estreno(año) como atributos.Plus: prepararlo para ordenar de forma descendente.
+
+4) Con el array de series, quiero eliminar un elemento segun su titulo sin modificar el array original.
+
+5) Con el array de series, devolver otro array formado por elementos de tipo "Nombre(estreno)".

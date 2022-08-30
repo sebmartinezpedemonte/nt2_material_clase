@@ -20,3 +20,7 @@ Los objetos deben tener nombre y estreno(año) como atributos.Plus: prepararlo p
 4) Con el array de series, quiero eliminar un elemento segun su titulo sin modificar el array original.
 
 5) Con el array de series, devolver otro array formado por elementos de tipo "Nombre(estreno)".
+
+6) hacer un metodo que reciba un array de strings y devuelvo otro con todos los elementos pasados a mayuscula.
+
+7) Dado el array de condiciones del ejercicio 2, devolver otro con el siguiente formato: "condicion:(si el valor es true:👍 sino 👎)"

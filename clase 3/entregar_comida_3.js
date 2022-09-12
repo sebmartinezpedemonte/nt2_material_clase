@@ -4,12 +4,16 @@ async function entregarComida() {
   const hamburguesaPromise = getHamburguesa();
   const bebidaPromise = getBebida();
 
-  const [ensalada, hamburguesa, bebida] = await Promise.all([
-    ensaladaPromise,
-    hamburguesaPromise,
-    bebidaPromise,
-  ]);
-  console.log(`Su pedido de ${ensalada} ${hamburguesa} ${bebida} esta listo`);
+  try {
+    const [ensalada, hamburguesa, bebida] = await Promise.all([
+      ensaladaPromise,
+      hamburguesaPromise,
+      bebidaPromise,
+    ]);
+    console.log(`Su pedido de ${ensalada} ${hamburguesa} ${bebida} esta listo`);
+  } catch (error) {
+    console.log("Hubo un problema con su pedido");
+  }
 }
 
 function getEnsalada() {

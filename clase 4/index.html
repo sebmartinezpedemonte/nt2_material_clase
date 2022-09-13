@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ miTexto }}</h1>
+      <input type="text" v-model="miTexto" />
+      <button @click="cambiarTexto">cambiar texto</button>
+      <h3 v-if="miArray.length <= 2">Quedan pocos elementos</h3>
+      <ul>
+        <li v-for="item in miArray" :key="item">
+          {{ item }}
+          <button>remove</button>
+        </li>
+      </ul>
+      <button @click="removeLast" :disabled="miArray.length == 0">
+        remove last
+      </button>
+      <ul>
+        <li
+          v-for="serie in series"
+          :key="serie.id"
+          :title="miTexto + ' estreno:'+ serie.estreno"
+        >
+          {{ serie.nombre }}
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>

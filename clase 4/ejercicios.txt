@@ -1,2 +1,7 @@
 4.1) tomar el ejercicio de series y, en vez de imprimir por consola, alimentar un html con el array.
     Agregar un boton para mostrarlo de forma descendiente.
+
+    metodos utiles
+        document.getElementById("elementoUl");
+        document.createElement("li");
+        algunElementoDelDOM.appendChild(unNuevoElemento);

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div id="app" class="container">
+      <h2 class="heading-text">
+        {{ texto }}
+        <span>{{textoModificado}} (y en minuscula {{segundoTexto}}...)</span>
+      </h2>
+      vf
+      <h1 v-if="!hayPersonas">No hay personas para mostrar</h1>
+
+      <ul class="image-gallery">
+        <li v-for="(persona, index) in personas" :key="index">
+          <img :src="persona.image" />
+          <div class="overlay">
+            <span
+              >{{persona.name}} (<small :class="persona.species.toLowerCase()"
+                >{{persona.species}}</small
+              >
+              )</span
+            >
+          </div>
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
+<style>
+  .human {
+    color: blue;
+  }
+  .alien {
+    color: red;
+  }
+</style>

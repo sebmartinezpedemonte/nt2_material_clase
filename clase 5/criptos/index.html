@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="orderByRanking">ranking</button>
+      <button @click="orderByName">name</button>
+      <ul>
+        <li
+          v-for="coin in orderedCoins"
+          :class="{'coin-top':coin.rank <= 3,'coin':coin.rank > 3}"
+          :key="coin.id"
+        >
+          <!-- me fije como muestra la imagen coincap y deduje que la url no cambia salvo por el nombre de la cripto.
+          Entonces, como nosotros tenemos ese dato, armamos la url de forma dinamica para cada iteracion.
+        -->
+          <img
+            :src="`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`"
+            alt=""
+          />
+          {{coin.name}} ({{ coin.symbol }}) {{coin.changePercent24Hr >
+          0?'⬆':'⬇'}}
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
+<style>
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  div ul li {
+    display: table-row;
+  }
+  img {
+    margin: 0 0 10px 0;
+    padding: 2px;
+    vertical-align: middle;
+  }
+
+  .coin-top {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 20px;
+    letter-spacing: 0px;
+    word-spacing: 2px;
+    color: #000000;
+    font-weight: 400;
+    text-decoration: none solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+  }
+  .coin {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 20px;
+    letter-spacing: 0px;
+    word-spacing: 2px;
+    color: #8a8a8a;
+    font-weight: 400;
+    text-decoration: none solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+  }
+</style>
